@@ -4,8 +4,10 @@
     "module": "esnext",
     "strict": true,
     "skipLibCheck": true,
-    "moduleResolution": "bundler"
+    "moduleResolution": "bundler",
+    "jsx": "react",
+    "esModuleInterop": true
   },
-  "include": ["./**/*.ts"],
+  "include": ["./**/*.ts", "main.tsx"],
   "exclude": ["node_modules", "dist"]
 }
