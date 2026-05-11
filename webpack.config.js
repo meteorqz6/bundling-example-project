@@ -32,6 +32,17 @@ module.exports = {
           "css-loader", // 1. CSS를 JavaScript 모듈로 변환한다.
         ],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset",
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource", // 폰트는 항상 별도 파일로 내보낸다.
+        generator: {
+          filename: "assets/[name][ext]",
+        },
+      },
     ],
   },
   resolve: {
