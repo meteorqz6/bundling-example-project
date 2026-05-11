@@ -53,6 +53,18 @@ module.exports = {
       inject: true,
     }),
   ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist"), // 빌드된 파일을 이 경로에서 서빙해요
+    },
+    port: 3000, // localhost:3000에서 실행
+    open: true, // 서버 실행 시 브라우저 자동 열기
+    hot: true, // HMR 사용
+    historyApiFallback: true, // SPA 라우팅 지원
+    client: {
+      overlay: true, // 에러 발생 시 브라우저에 띄워줘요
+    },
+  },
   resolve: {
     extensions: [".tsx", ".ts", ".js"], // 파일을 import할 때 확장자를 생략할 수 있다. .tsx 확장자, TS, JS를 혼용하는 프로젝트에서 설정해두면 좋다.
   },
