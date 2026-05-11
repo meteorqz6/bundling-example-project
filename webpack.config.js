@@ -1,4 +1,3 @@
-const { resolve } = require("dns");
 const path = require("path");
 
 module.exports = {
@@ -25,6 +24,13 @@ module.exports = {
           },
         ],
         exclude: /node_modules/, // 외부 모듈은 제외한다.
+      },
+      {
+        test: /\.css$/,
+        use: [
+          "style-loader", // 2. CSS를 <style> 태그로 주입한다.
+          "css-loader", // 1. CSS를 JavaScript 모듈로 변환한다.
+        ],
       },
     ],
   },
